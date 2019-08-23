@@ -14,6 +14,10 @@ class ArticlesController < ApplicationController
 		@article = Article.new
 	end
 
+	def edit
+		@article = Article.find(params[:id])
+	end
+
 	def create
 		@article = Article.new(article_params)
 
@@ -23,6 +27,16 @@ class ArticlesController < ApplicationController
 		else #otherwise tell user to make new article
 			#render will reuse the same request as before, if we had used redirect_to then the browser would issue another request
 			render 'new'
+		end
+	end
+
+	def update
+		@article = Article.find(params[:id])
+
+		if @article.update(article_params)
+			redirect_to @article
+		else
+			render 'edit'
 		end
 	end
 
