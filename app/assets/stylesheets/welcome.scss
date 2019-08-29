@@ -1,11 +1,19 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com
+
+body{
+	background: url('https://s3.amazonaws.com/zumpermedia/blog/wp-content/uploads/2019/02/20155959/computer-at-coffee-shop.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 h1.blocktext {
     margin: 0;
     position: absolute;
-    top: 85%;
+    top: 70%;
     left: 48%;
     margin-right: -50%;
     transform: translate(-50%, -50%) }
@@ -14,7 +22,7 @@ h1.blocktext {
 p.blocktext {
     margin: 0;
     position: absolute;
-    top: 95%;
+    top: 80%;
     left: 48%;
     margin-right: -50%;
     transform: translate(-50%, -50%) }

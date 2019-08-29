@@ -1,23 +1,34 @@
-<h1>Listing articles</h1>
- 
 
-<%= link_to 'New article', new_article_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-  </tr>
- 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+<body class="backImage">
+  <h1 class="format">Articles</h1> 
+
+  <div class="center">  
+    <div class="jumbotron center">
+      <table class="table">
+       
+        <% @articles.each do |article| %>
+          <tr class="color1">
+            <td><%= article.title %></td>
+          </tr>
+          <tr class="color1">
+            <td>
+              <%= article.text %>
+            </td> 
+          </tr>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-default"><%= link_to 'Show', article_path(article) %></button>
+              <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_article_path(article) %></button>
+              <button type="button" class="btn btn-default"><%= link_to 'Destroy', article_path(article),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></button>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+      <button type="button" class="btn btn-default"><%= link_to 'New article', new_article_path %></button>
+      
+    </div>
+  </div>
+</body>
