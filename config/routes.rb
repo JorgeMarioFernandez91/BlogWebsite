@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
-  resources :articles
 
   root 'welcome#index'
+
+  resources :articles do
+  	get 'welcome/index'
+  end
+
+  resources :projects do
+  	get 'welcome/index'
+  end
+
+
 end
